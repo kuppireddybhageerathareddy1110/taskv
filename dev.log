@@ -1,0 +1,384 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.21.112.1:3000
+✓ Ready in 1404ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\k bhageeratha reddy\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\k bhageeratha reddy\Downloads\task\customer-360-dashboard\frontend\package-lock.json
+
+
+Error: Route "/account/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at AccountPage (src\app\account\[id]\page.tsx:7:11)
+   5 |
+   6 | export default function AccountPage({ params }: { params: { id: string } }) {
+>  7 |   const { id } = params;
+     |           ^
+   8 |   console.log('AccountPage id:', id);
+   9 |   console.log('crm length:', crm.length);
+  10 |   console.log('crm:', crm);
+AccountPage id: undefined
+crm length: 5
+crm: [
+  {
+    id: 'acme',
+    name: 'Acme Logistics',
+    arr: 184000,
+    industry: 'Logistics',
+    owner: 'R. Nair',
+    renewal: '2026-08-02',
+    plan: 'Growth'
+  },
+  {
+    id: 'bluepeak',
+    name: 'BluePeak Retail',
+    arr: 96000,
+    industry: 'Retail',
+    owner: 'S. Iyer',
+    renewal: '2026-09-14',
+    plan: 'Standard'
+  },
+  {
+    id: 'forma',
+    name: 'Forma Health',
+    arr: 312000,
+    industry: 'Healthcare',
+    owner: 'R. Nair',
+    renewal: '2026-07-30',
+    plan: 'Enterprise'
+  },
+  {
+    id: 'kestrel',
+    name: 'Kestrel Manufacturing',
+    arr: 58000,
+    industry: 'Manufacturing',
+    owner: 'A. Verma',
+    renewal: '2027-01-10',
+    plan: 'Standard'
+  },
+  {
+    id: 'nimbus',
+    name: 'Nimbus Cloud Co',
+    arr: 145000,
+    industry: 'SaaS',
+    owner: 'S. Iyer',
+    renewal: '2026-08-20',
+    plan: 'Growth'
+  }
+]
+account found: undefined
+ GET /account/acme 404 in 1790ms (next.js: 1480ms, application-code: 310ms)
+ GET / 200 in 201ms (next.js: 77ms, application-code: 125ms)
+ GET / 200 in 120ms (next.js: 21ms, application-code: 98ms)
+ GET / 200 in 113ms (next.js: 12ms, application-code: 101ms)
+Error: Route "/account/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at AccountPage (src\app\account\[id]\page.tsx:7:11)
+   5 |
+   6 | export default function AccountPage({ params }: { params: { id: string } }) {
+>  7 |   const { id } = params;
+     |           ^
+   8 |   console.log('AccountPage id:', id);
+   9 |   console.log('crm length:', crm.length);
+  10 |   console.log('crm:', crm);
+AccountPage id: undefined
+crm length: 5
+crm: [
+  {
+    id: 'acme',
+    name: 'Acme Logistics',
+    arr: 184000,
+    industry: 'Logistics',
+    owner: 'R. Nair',
+    renewal: '2026-08-02',
+    plan: 'Growth'
+  },
+  {
+    id: 'bluepeak',
+    name: 'BluePeak Retail',
+    arr: 96000,
+    industry: 'Retail',
+    owner: 'S. Iyer',
+    renewal: '2026-09-14',
+    plan: 'Standard'
+  },
+  {
+    id: 'forma',
+    name: 'Forma Health',
+    arr: 312000,
+    industry: 'Healthcare',
+    owner: 'R. Nair',
+    renewal: '2026-07-30',
+    plan: 'Enterprise'
+  },
+  {
+    id: 'kestrel',
+    name: 'Kestrel Manufacturing',
+    arr: 58000,
+    industry: 'Manufacturing',
+    owner: 'A. Verma',
+    renewal: '2027-01-10',
+    plan: 'Standard'
+  },
+  {
+    id: 'nimbus',
+    name: 'Nimbus Cloud Co',
+    arr: 145000,
+    industry: 'SaaS',
+    owner: 'S. Iyer',
+    renewal: '2026-08-20',
+    plan: 'Growth'
+  }
+]
+account found: undefined
+ GET /account/acme 200 in 121ms (next.js: 38ms, application-code: 83ms)
+Error: Route "/account/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at AccountPage (src\app\account\[id]\page.tsx:7:11)
+   5 |
+   6 | export default function AccountPage({ params }: { params: { id: string } }) {
+>  7 |   const { id } = params;
+     |           ^
+   8 |   console.log('AccountPage id:', id);
+   9 |   console.log('crm length:', crm.length);
+  10 |   console.log('crm:', crm);
+AccountPage id: undefined
+crm length: 5
+crm: [
+  {
+    id: 'acme',
+    name: 'Acme Logistics',
+    arr: 184000,
+    industry: 'Logistics',
+    owner: 'R. Nair',
+    renewal: '2026-08-02',
+    plan: 'Growth'
+  },
+  {
+    id: 'bluepeak',
+    name: 'BluePeak Retail',
+    arr: 96000,
+    industry: 'Retail',
+    owner: 'S. Iyer',
+    renewal: '2026-09-14',
+    plan: 'Standard'
+  },
+  {
+    id: 'forma',
+    name: 'Forma Health',
+    arr: 312000,
+    industry: 'Healthcare',
+    owner: 'R. Nair',
+    renewal: '2026-07-30',
+    plan: 'Enterprise'
+  },
+  {
+    id: 'kestrel',
+    name: 'Kestrel Manufacturing',
+    arr: 58000,
+    industry: 'Manufacturing',
+    owner: 'A. Verma',
+    renewal: '2027-01-10',
+    plan: 'Standard'
+  },
+  {
+    id: 'nimbus',
+    name: 'Nimbus Cloud Co',
+    arr: 145000,
+    industry: 'SaaS',
+    owner: 'S. Iyer',
+    renewal: '2026-08-20',
+    plan: 'Growth'
+  }
+]
+account found: undefined
+ GET /account/bluepeak 200 in 108ms (next.js: 24ms, application-code: 84ms)
+Error: Route "/account/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at AccountPage (src\app\account\[id]\page.tsx:7:11)
+   5 |
+   6 | export default function AccountPage({ params }: { params: { id: string } }) {
+>  7 |   const { id } = params;
+     |           ^
+   8 |   console.log('AccountPage id:', id);
+   9 |   console.log('crm length:', crm.length);
+  10 |   console.log('crm:', crm);
+AccountPage id: undefined
+crm length: 5
+crm: [
+  {
+    id: 'acme',
+    name: 'Acme Logistics',
+    arr: 184000,
+    industry: 'Logistics',
+    owner: 'R. Nair',
+    renewal: '2026-08-02',
+    plan: 'Growth'
+  },
+  {
+    id: 'bluepeak',
+    name: 'BluePeak Retail',
+    arr: 96000,
+    industry: 'Retail',
+    owner: 'S. Iyer',
+    renewal: '2026-09-14',
+    plan: 'Standard'
+  },
+  {
+    id: 'forma',
+    name: 'Forma Health',
+    arr: 312000,
+    industry: 'Healthcare',
+    owner: 'R. Nair',
+    renewal: '2026-07-30',
+    plan: 'Enterprise'
+  },
+  {
+    id: 'kestrel',
+    name: 'Kestrel Manufacturing',
+    arr: 58000,
+    industry: 'Manufacturing',
+    owner: 'A. Verma',
+    renewal: '2027-01-10',
+    plan: 'Standard'
+  },
+  {
+    id: 'nimbus',
+    name: 'Nimbus Cloud Co',
+    arr: 145000,
+    industry: 'SaaS',
+    owner: 'S. Iyer',
+    renewal: '2026-08-20',
+    plan: 'Growth'
+  }
+]
+account found: undefined
+ GET /account/forma 200 in 104ms (next.js: 38ms, application-code: 66ms)
+Error: Route "/account/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at AccountPage (src\app\account\[id]\page.tsx:7:11)
+   5 |
+   6 | export default function AccountPage({ params }: { params: { id: string } }) {
+>  7 |   const { id } = params;
+     |           ^
+   8 |   console.log('AccountPage id:', id);
+   9 |   console.log('crm length:', crm.length);
+  10 |   console.log('crm:', crm);
+AccountPage id: undefined
+crm length: 5
+crm: [
+  {
+    id: 'acme',
+    name: 'Acme Logistics',
+    arr: 184000,
+    industry: 'Logistics',
+    owner: 'R. Nair',
+    renewal: '2026-08-02',
+    plan: 'Growth'
+  },
+  {
+    id: 'bluepeak',
+    name: 'BluePeak Retail',
+    arr: 96000,
+    industry: 'Retail',
+    owner: 'S. Iyer',
+    renewal: '2026-09-14',
+    plan: 'Standard'
+  },
+  {
+    id: 'forma',
+    name: 'Forma Health',
+    arr: 312000,
+    industry: 'Healthcare',
+    owner: 'R. Nair',
+    renewal: '2026-07-30',
+    plan: 'Enterprise'
+  },
+  {
+    id: 'kestrel',
+    name: 'Kestrel Manufacturing',
+    arr: 58000,
+    industry: 'Manufacturing',
+    owner: 'A. Verma',
+    renewal: '2027-01-10',
+    plan: 'Standard'
+  },
+  {
+    id: 'nimbus',
+    name: 'Nimbus Cloud Co',
+    arr: 145000,
+    industry: 'SaaS',
+    owner: 'S. Iyer',
+    renewal: '2026-08-20',
+    plan: 'Growth'
+  }
+]
+account found: undefined
+ GET /account/kestrel 200 in 102ms (next.js: 24ms, application-code: 78ms)
+Error: Route "/account/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at AccountPage (src\app\account\[id]\page.tsx:7:11)
+   5 |
+   6 | export default function AccountPage({ params }: { params: { id: string } }) {
+>  7 |   const { id } = params;
+     |           ^
+   8 |   console.log('AccountPage id:', id);
+   9 |   console.log('crm length:', crm.length);
+  10 |   console.log('crm:', crm);
+AccountPage id: undefined
+crm length: 5
+crm: [
+  {
+    id: 'acme',
+    name: 'Acme Logistics',
+    arr: 184000,
+    industry: 'Logistics',
+    owner: 'R. Nair',
+    renewal: '2026-08-02',
+    plan: 'Growth'
+  },
+  {
+    id: 'bluepeak',
+    name: 'BluePeak Retail',
+    arr: 96000,
+    industry: 'Retail',
+    owner: 'S. Iyer',
+    renewal: '2026-09-14',
+    plan: 'Standard'
+  },
+  {
+    id: 'forma',
+    name: 'Forma Health',
+    arr: 312000,
+    industry: 'Healthcare',
+    owner: 'R. Nair',
+    renewal: '2026-07-30',
+    plan: 'Enterprise'
+  },
+  {
+    id: 'kestrel',
+    name: 'Kestrel Manufacturing',
+    arr: 58000,
+    industry: 'Manufacturing',
+    owner: 'A. Verma',
+    renewal: '2027-01-10',
+    plan: 'Standard'
+  },
+  {
+    id: 'nimbus',
+    name: 'Nimbus Cloud Co',
+    arr: 145000,
+    industry: 'SaaS',
+    owner: 'S. Iyer',
+    renewal: '2026-08-20',
+    plan: 'Growth'
+  }
+]
+account found: undefined
+ GET /account/nimbus 200 in 107ms (next.js: 36ms, application-code: 71ms)
+ GET / 200 in 43ms (next.js: 15ms, application-code: 28ms)
+ GET / 200 in 52ms (next.js: 11ms, application-code: 41ms)
+ GET / 200 in 40ms (next.js: 15ms, application-code: 25ms)
+ GET / 200 in 73ms (next.js: 14ms, application-code: 59ms)
+[?25h

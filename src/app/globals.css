@@ -3,24 +3,100 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* UI/UX Pro Max Color System */
+  --color-primary: #0F172A;      /* Navy */
+  --color-on-primary: #FFFFFF;   /* White on primary */
+  --color-secondary: #334155;    /* Slate */
+  --color-accent: #0369A1;       /* Blue */
+  --color-background: #F8FAFC;   /* Light gray */
+  --color-foreground: #020617;   /* Dark navy */
+  --color-muted: #E8ECF1;        /* Very light gray */
+  --color-border: #E2E8F0;       /* Border gray */
+  --color-destructive: #DC2626;  /* Red */
+  --color-ring: #0F172A;         /* Navy */
+
+  /* Semantic colors for status indicators */
+  --color-success: #10B981;      /* Green */
+  --color-warning: #FBBF24;      /* Amber */
+  --color-error: #EF4444;        /* Red */
+  /* Shades for backgrounds */
+  --color-success-bg: #10B98110; /* Green 10% */
+  --color-warning-bg: #FBBF2410; /* Amber 10% */
+  --color-error-bg: #EF444410;   /* Red 10% */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* UI/UX Pro Max Colors */
+  --color-primary: var(--color-primary);
+  --color-on-primary: var(--color-on-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-destructive: var(--color-destructive);
+  --color-ring: var(--color-ring);
+
+  /* Semantic colors */
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-success-bg: var(--color-success-bg);
+  --color-warning-bg: var(--color-warning-bg);
+  --color-error-bg: var(--color-error-bg);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Add Plus Jakarta Sans as alternative */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Override body to use better font stack */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-feature-settings: normal;
+}
+
+/* Material Icons */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* preferred size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* Dark mode adjustments - keep brand colors but adjust backgrounds */
+    --color-background: #0F172A; /* Dark navy */
+    --color-muted: #1E293B;      /* Darker slate */
+    --color-border: #334155;     /* Medium slate */
+  }
 }
