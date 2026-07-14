@@ -4,26 +4,26 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* UI/UX Pro Max Color System */
-  --color-primary: #0F172A;      /* Navy */
-  --color-on-primary: #FFFFFF;   /* White on primary */
-  --color-secondary: #334155;    /* Slate */
-  --color-accent: #0369A1;       /* Blue */
-  --color-background: #F8FAFC;   /* Light gray */
-  --color-foreground: #020617;   /* Dark navy */
-  --color-muted: #E8ECF1;        /* Very light gray */
-  --color-border: #E2E8F0;       /* Border gray */
-  --color-destructive: #DC2626;  /* Red */
-  --color-ring: #0F172A;         /* Navy */
+  /* UI/UX Pro Max Color System - Data-Dense Dashboard */
+  --color-primary: #1E40AF;      /* Blue-800 */
+  --color-on-primary: #FFFFFF;   /* White */
+  --color-secondary: #3B82F6;    /* Blue-500 */
+  --color-accent: #D97706;       /* Amber-600 */
+  --color-background: #F8FAFC;   /* Slate-50 */
+  --color-foreground: #1E3A8A;   /* Blue-800 */
+  --color-muted: #E9EEF6;        /* Slate-100 */
+  --color-border: #DBEAFE;       /* Blue-200 */
+  --color-destructive: #DC2626;  /* Red-600 */
+  --color-ring: #1E40AF;         /* Blue-800 */
 
   /* Semantic colors for status indicators */
-  --color-success: #10B981;      /* Green */
-  --color-warning: #FBBF24;      /* Amber */
-  --color-error: #EF4444;        /* Red */
+  --color-success: #10B981;      /* Emerald-500 */
+  --color-warning: #FBBF24;      /* Amber-400 */
+  --color-error: #EF4444;        /* Red-500 */
   /* Shades for backgrounds */
-  --color-success-bg: #10B98110; /* Green 10% */
-  --color-warning-bg: #FBBF2410; /* Amber 10% */
-  --color-error-bg: #EF444410;   /* Red 10% */
+  --color-success-bg: #10B98110; /* Emerald-500 at 10% */
+  --color-warning-bg: #FBBF2410; /* Amber-400 at 10% */
+  --color-error-bg: #EF444410;   /* Red-500 at 10% */
 }
 
 @theme inline {
@@ -50,12 +50,14 @@
   --color-warning-bg: var(--color-warning-bg);
   --color-error-bg: var(--color-error-bg);
 
+  /* Fira Code / Fira Sans - Data-Dense Dashboard Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Add Plus Jakarta Sans as alternative */
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  /* Add Fira Code and Fira Sans as recommended */
+  --font-heading: 'Fira Sans', sans-serif;
+  --font-body: 'Fira Sans', sans-serif;
+  --font-mono: 'Fira Code', monospace;
 }
 
 /* Override body to use better font stack */
@@ -89,14 +91,132 @@ body {
   font-feature-settings: 'liga';
 }
 
+/* Glassmorphism effect */
+.glass {
+  background: rgba(var(--color-foreground-rgb), 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(var(--color-foreground-rgb), 0.125);
+  box-shadow: 0 8px 32px 0 rgba(var(--color-foreground-rgb), 0.08);
+}
+
+/* Define RGB variables for use in glass effect */
+:root {
+  --color-foreground-rgb: 30, 58, 138; /* dark navy from --color-foreground */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-foreground-rgb: 237, 237, 237; /* light gray */
 
     /* Dark mode adjustments - keep brand colors but adjust backgrounds */
     --color-background: #0F172A; /* Dark navy */
     --color-muted: #1E293B;      /* Darker slate */
     --color-border: #334155;     /* Medium slate */
   }
+}
+
+/* Enhanced styles for better dashboard experience */
+
+/* Smooth transitions for interactive elements */
+.transition-enhanced {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Hover effects with lift */
+.hover-lift {
+  @apply transition-enhanced;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-1 drop-shadow-lg;
+}
+
+/* Focus rings for accessibility */
+.focus-ring {
+  @apply ring-2 ring-primary ring-offset-2;
+}
+
+/* Enhanced card styles */
+.card-enhanced {
+  @apply glass transition-enhanced hover-lift hover:shadow-xl border border-border/50;
+}
+
+/* Chart container styles */
+.chart-container {
+  @apply glass p-6 transition-enhanced hover-lift;
+}
+
+/* Metric card styles */
+.metric-card {
+  @apply glass p-6 transition-enhanced hover-lift border border-border/50;
+}
+
+/* Responsive container */
+.container-responsive {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Section spacing */
+.section-spacing {
+  @apply mt-12;
+}
+
+.section-spacing-lg {
+  @apply mt-16;
+}
+
+/* Animation utilities */
+.animate-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chart-specific styles */
+.chart-placeholder {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: var(--color-muted);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.chart-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0; /* Will be set dynamically */
+  width: 0;  /* Will be set dynamically */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  transition: height 1s ease-out, width 1s ease-out;
+}
+
+/* Gradient bars */
+.gradient-bar-success {
+  background: linear-gradient(to right, var(--color-success), var(--color-primary));
+}
+
+.gradient-bar-warning {
+  background: linear-gradient(to right, var(--color-accent), var(--color-warning));
+}
+
+.gradient-bar-primary {
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
 }

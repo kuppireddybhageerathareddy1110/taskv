@@ -70,7 +70,7 @@ export default function AccountDossier({ accountId }: AccountDossierProps) {
       </div>
 
       {/* Next Best Action Card */}
-      <div className="border p-6 bg-[var(--color-background)]">
+      <Card className="p-6">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0">
             <div className="h-10 w-10 items-center justify-center rounded-md bg-[var(--color-warning)] text-[var(--color-on-primary)] flex">
@@ -85,11 +85,11 @@ export default function AccountDossier({ accountId }: AccountDossierProps) {
             <div className="text-xs text-[var(--color-secondary)]">{why}</div>
           </div>
         </div>
-      </div>
+      </Card>
 
       <div className="grid grid-cols-2 gap-6">
         {/* Risks */}
-        <div className="border p-6 bg-[var(--color-background)]">
+        <Card className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-mono text-xs uppercase tracking-wider text-[var(--color-error)]">
               Risks
@@ -114,7 +114,7 @@ export default function AccountDossier({ accountId }: AccountDossierProps) {
               <p className="text-sm text-[var(--color-secondary)]">No risks detected.</p>
             </div>
           )}
-        </div>
+        </Card>
 
         {/* Opportunities */}
         <div className="border p-6 bg-[var(--color-background)]">
@@ -198,7 +198,7 @@ export default function AccountDossier({ accountId }: AccountDossierProps) {
                 {/* Combined timeline */}
                 {[...s.map(msg => ({...msg, type: 'slack' as const})),
                  ...e.map(mail => ({...mail, type: 'email' as const}))]
-                  .sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0))
+                  .sort((a, b) => a.days_ago - b.days_ago)
                   .slice(0, 6) // Show latest 6 items
                   .map((item, index) => {
                     const isSlack = item.type === 'slack';

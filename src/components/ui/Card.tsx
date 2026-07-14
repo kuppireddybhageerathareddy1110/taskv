@@ -1,17 +1,28 @@
 // src/components/ui/Card.tsx
 import * as React from "react";
 
-interface CardProps extends React.DivHTMLAttributes<HTMLDivElement> {
+interface CardProps extends React.ComponentProps<'div'> {
   className?: string;
+  variant?: "default" | "elevated" | "outlined";
 }
 
 const Card = React.forwardRef<
   HTMLDivElement,
   CardProps
->(({ className = "", ...props }, ref) => {
+>(({ className = "", variant = "default", ...props }, ref) => {
+  // Base classes
+  const baseClasses = "glass transition-enhanced hover-lift";
+
+  // Variant classes
+  const variantClasses = {
+    default: "",
+    elevated: "hover:shadow-lg",
+    outlined: "border border-border/50",
+  }[variant];
+
   return (
     <div
-      className={`bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg shadow-sm ${className}`}
+      className={`${baseClasses} ${variantClasses} ${className}`}
       ref={ref}
       {...props}
     />
@@ -19,4 +30,4 @@ const Card = React.forwardRef<
 });
 Card.displayName = "Card";
 
-export { Card };
+export default Card;

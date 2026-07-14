@@ -1,7 +1,7 @@
 // src/components/ui/Badge.tsx
 import * as React from "react";
 
-interface BadgeProps extends React.SpanHTMLAttributes<HTMLSpanElement> {
+interface BadgeProps extends React.ComponentProps<'span'> {
   variant?: "default" | "secondary" | "destructive" | "outline" | "success" | "warning";
   size?: "default" | "sm" | "lg" | "icon";
   className?: string;

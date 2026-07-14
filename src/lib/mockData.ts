@@ -96,7 +96,7 @@ export function analyze(acct: CRMAccount): Analysis {
   const unreplied = e.filter(x=>!x.replied);
   unreplied.forEach(m=>{ if(m.days_ago>=2){ score-=8; risks.push(`No reply sent to "${m.subject}" in ${m.days_ago} day(s)`);} });
 
-  const daysToRenewal = Math.round((new Date(acct.renewal) - new Date("2026-07-14"))/86400000);
+  const daysToRenewal = Math.round((new Date(acct.renewal).getTime() - new Date("2026-07-14").getTime())/86400000);
   if(daysToRenewal <= 21){ score-=10; risks.push(`Renewal in ${daysToRenewal} day(s) — inside standard risk window`); }
 
   s.forEach(m=>{
@@ -114,7 +114,7 @@ export function analyze(acct: CRMAccount): Analysis {
   if(risks.length===0) opps.push("No active risk signals — good candidate for a proactive expansion conversation");
   score = Math.max(5, Math.min(98, Math.round(score)));
 
-  let tier = "healthy";
+  let tier: 'risk' | 'watch' | 'healthy' = 'healthy';
   if(score < 50) tier = "risk"; else if(score < 70) tier = "watch";
 
   // Next Best Action logic
